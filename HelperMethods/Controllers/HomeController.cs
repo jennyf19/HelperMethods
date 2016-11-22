@@ -11,8 +11,8 @@ namespace HelperMethods.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Fruits = new string[] {"Apple", "Orange", "Pear"};
-            ViewBag.Cities = new string[] {"New York", "Madrid", "Seattle"};
+            ViewBag.Fruits = new string[] { "Apple", "Orange", "Pear" };
+            ViewBag.Cities = new string[] { "New York", "Madrid", "Seattle" };
             string message = "This is an HTML element: <input>";
             return View((object)message);
         }
@@ -25,21 +25,7 @@ namespace HelperMethods.Controllers
         [HttpPost]
         public ActionResult CreatePerson(Person person)
         {
-            return View(person);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View("DisplayPerson", person);
         }
     }
 }
